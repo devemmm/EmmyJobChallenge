@@ -1,0 +1,94 @@
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>Emmanuel NTIVUGURUZWA Job Challenge</title>
+
+    <link rel='stylesheet' href='./index.css' />
+    <link rel='stylesheet' href='./bootstrap.css' />
+    <link rel='stylesheet' href='./bootstrap.min.css' />
+    <script
+      src='https://kit.fontawesome.com/a076d05399.js'
+      crossorigin='anonymous'
+    ></script>
+  </head>
+  <body>
+    <div class='tabledata'>
+      <a href='/'><button
+          style='background-color: #fff; width: 8rem; margin-bottom: 2rem;'
+        >Register</button></a>
+      {{#if message}}
+        <div style='text-align: center' class='alert alert-{{message.type}}'>
+          <strong>{{message.intro}}</strong>
+          {{message.message}}
+        </div>
+
+      {{/if}}
+      <table
+        id='example'
+        class='table table-striped table-bordered'
+        style='width: 100%'
+      >
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Gender</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Salary</th>
+            <th>Date Of Birth</th>
+            <th>Nationality</th>
+            <th>Zip Code</th>
+            <th>Position</th>
+            <th>Modify</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          {{#each employee}}
+            <tr>
+              <td>{{fname}}</td>
+              <td style='word-wrap: break-word;'>{{lname}}</td>
+              <td>{{gender}}</td>
+              <td id='textlength'>{{email}}</td>
+              <td>{{phone}}</td>
+              <td>{{salary}}</td>
+              <td>{{dob}}</td>
+              <td>{{nationality}}</td>
+              <td>{{zipCode}}</td>
+              <td>{{position}}</td>
+              <td>
+
+                <a href='/update-employee?_id={{_id}}'>
+                  <i
+                    class='fas fa-pen'
+                    style='font-size:24px;color:#fff; margin-right: 1rem;'
+                  ></i></a>
+
+                <a href='/delete-employee?_id={{_id}}'>
+                  <i
+                    class='fas fa-trash'
+                    style='font-size:24px;color:red'
+                  ></i></a>
+
+              </td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+    <script src='https://code.jquery.com/jquery-3.5.1.js'></script>
+    <script
+      src='https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js'
+    ></script>
+    <script
+      src='https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap4.min.js'
+    ></script>
+    <script src='./app.js'></script>
+    <script>
+      const handleUpdate =(e)=>{ console.log(e) }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "name": "emmyjobchallenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "noded ./src/app.js",
+    "dev": "env-cmd ./config/dev.env nodemon ./src/app.js"
+  },
+  "author": "Emmanuel NTIVUGURUZWA",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.17.2",
+    "express-session": "^1.17.2",
+    "hbs": "^4.2.0",
+    "mongoose": "^6.1.8"
+  },
+  "devDependencies": {
+    "env-cmd": "^8.0.2",
+    "nodemon": "^2.0.15"
+  }
+}

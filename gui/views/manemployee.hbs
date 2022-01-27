@@ -1,0 +1,137 @@
+<html lang='en' dir='ltr'>
+  <head>
+    <meta charset='UTF-8' />
+    <title>Emmanuel NTIVUGURUZWA Job Challenge</title>
+    <link rel='stylesheet' href='./bootstrap.css' />
+    <link rel='stylesheet' href='./bootstrap.min.css' />
+    <link rel='stylesheet' href='./index.css' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  </head>
+  <body>
+    <div class='container'>
+      {{#if message}}
+        <div style='text-align: center' class='alert alert-{{message.type}}'>
+          <button
+            type='button'
+            class='close'
+            data-dismiss='alert'
+          >&times;</button>
+          <strong>{{message.intro}}</strong>
+          {{message.message}}
+        </div>
+
+      {{/if}}
+      <div class='title'>{{perform.title}}</div>
+      <div class='content'>
+        <form action='{{perform.action}}' method='POST'>
+          <div class='employee-details'>
+            <div class='input-box'>
+              <span class='details'>Firt Name</span>
+              <input
+                type='text'
+                name='fname'
+                value='{{employee.fname}}'
+                required
+              />
+            </div>
+            <div class='input-box'>
+              <span class='details'>Last Name</span>
+              <input
+                type='text'
+                name='lname'
+                value='{{employee.lname}}'
+                required
+              />
+            </div>
+            <div class='input-box'>
+              <span class='details'>Email</span>
+              <input
+                type='email'
+                name='email'
+                value='{{employee.email}}'
+                required
+              />
+            </div>
+            <div class='input-box'>
+              <span class='details'>Phone:</span>
+              <input
+                type='tel'
+                name='phone'
+                value='{{employee.phone}}'
+                required
+              />
+            </div>
+            <div class='input-box'>
+              <span class='details'>Salary</span>
+              <input
+                type='number'
+                name='salary'
+                value='{{employee.salary}}'
+                required
+              />
+            </div>
+            <div class='input-box'>
+              <span class='details'>Dob</span>
+              <input type='date' name='dob' value='{{employee.dob}}' required />
+            </div>
+            <div class='input-box'>
+              <span class='details'>Nationality</span>
+              <input
+                type='text'
+                name='nationality'
+                value='{{employee.nationality}}'
+                required
+              />
+            </div>
+            <div class='input-box'>
+              <span class='details'>Zip Code</span>
+              <input
+                type='text'
+                name='zipCode'
+                value='{{employee.zipCode}}'
+                required
+              />
+            </div>
+            <div class='input-box'>
+              <span class='details'>Position</span>
+              <input
+                type='text'
+                name='position'
+                value='{{employee.position}}'
+                required
+              />
+            </div>
+          </div>
+          <div class='gender-details'>
+            <input type='radio' name='gender' value='male' id='dot-1' />
+            <input type='radio' name='gender' value='female' id='dot-2' />
+            <input type='radio' name='gender' value='none' id='dot-3' />
+            <span class='gender-title'>Gender</span>
+            <div class='category'>
+              <label for='dot-1'>
+                <span class='dot one'></span>
+                <span class='gender'>Male</span>
+              </label>
+              <label for='dot-2'>
+                <span class='dot two'></span>
+                <span class='gender'>Female</span>
+              </label>
+              <label for='dot-3'>
+                <span class='dot three'></span>
+                <span class='gender'>Prefer not to say</span>
+              </label>
+            </div>
+          </div>
+          <div class='button'>
+            <input type='submit' value='{{perform.button}}' />
+          </div>
+          <div class='button'>
+            <a href='/employee'>
+              <input type='button' value='Employee List' />
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
